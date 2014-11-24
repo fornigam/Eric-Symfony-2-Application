@@ -1,0 +1,15 @@
+celon_software_admin_user_homepage:
+    path:     / 
+    defaults: { _controller: CelonSoftwareAdminBundle:User:index }
+
+celon_software_admin_log_reader:
+    path:     /logreader
+    defaults: { _controller: CelonSoftwareAdminBundle:User:logreader }
+    
+celon_software_admin_log_upload:
+    path:     /upload
+    defaults: { _controller: CelonSoftwareAdminBundle:User:upload }
+    
+celon_software_admin_log_list:
+    path:     /listlog
+    defaults: { _controller: CelonSoftwareAdminBundle:User:list }

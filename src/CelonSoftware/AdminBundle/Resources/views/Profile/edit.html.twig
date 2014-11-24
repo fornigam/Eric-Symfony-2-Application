@@ -1,0 +1,8 @@
+{% extends "CelonSoftwareAdminBundle::layout.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link type="text/css" rel="stylesheet"  href="{{ asset("bundles/celonsoftwareadmin/css/signin.css") }}" />    
+{% endblock %}
+{% block fos_user_content %}
+    {% include "CelonSoftwareAdminBundle:Profile:edit_content.html.twig" %}
+{% endblock fos_user_content %}

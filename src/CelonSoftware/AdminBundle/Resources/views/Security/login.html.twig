@@ -1,0 +1,27 @@
+{% extends "CelonSoftwareAdminBundle::layout.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link type="text/css" rel="stylesheet" rev="stylesheet" href="{{ asset("bundles/celonsoftwareadmin/css/signin.css")}}"/>
+{% endblock %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block fos_user_content %}
+    {% if error %}
+        <div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        <label class="sr-only" for="username">{{ 'security.login.username'|trans }}</label>
+        <input class="form-control" type="text" id="username" name="_username" required="required" placeholder="Username"/>
+        <label class="sr-only" for="password">{{ 'security.login.password'|trans }}</label>
+        <input class="form-control" type="password" id="password" name="_password" required="required" placeholder="Password"/>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />        
+                {{ 'security.login.remember_me'|trans }}
+            </label>
+        </div>
+        <button type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block">{{ 'security.login.submit'|trans }}</button><br/>
+        <a href='{{ path('celon_software_admin_user_homepage') }}' id="_submit" name="_submit" class="btn btn-primary btn-lg full-width">Home</a>
+    </form>
+{% endblock fos_user_content %}

@@ -1,0 +1,12 @@
+parameters:
+#    celon_software_admin.example.class: CelonSoftware\AdminBundle\Example
+
+services:
+#    celon_software_admin.example:
+#        class: %celon_software_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    celonsoftware_user.password_resetting:
+        class: CelonSoftware\AdminBundle\EventListener\PasswordResettingListener
+        arguments: [@router]
+        tags:
+            - { name: kernel.event_subscriber }

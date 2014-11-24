@@ -1,0 +1,13 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form class="form-signin" class="fos_user_registration_register">   
+    <h2 class="form-signin-heading">My Updated profile!</h2>
+    <div id="fos_user_registration_form" >
+        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+    </div>
+    <div>
+        <a href='{{ path('celon_software_admin_user_homepage') }}' id="_submit" name="_submit" class="btn btn-primary btn-lg full-width">Home</a>
+    </div>
+</form>
+

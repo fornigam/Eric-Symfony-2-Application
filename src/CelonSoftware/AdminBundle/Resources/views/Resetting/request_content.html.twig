@@ -1,0 +1,15 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form class="form-signin" action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <div id="fos_user_registration_form" >
+        <h2 class="form-signin-heading">Ohh! Password Forget?</h2>
+        {% if invalid_username is defined %}
+            <div class="error">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</div>
+        {% endif %}
+        <label class="sr-only" for="username">{{ 'resetting.request.username'|trans }}</label>
+        <input class="form-control" type="text" id="username" name="username" required="required" />
+        <div class="checkbox"></div>
+        <button type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block">{{ 'resetting.request.submit'|trans }}</button><br/>
+        <a href='{{ path('celon_software_admin_user_homepage') }}' id="_submit" name="_submit" class="btn btn-primary btn-lg full-width">Home</a>
+    </div>
+</form>

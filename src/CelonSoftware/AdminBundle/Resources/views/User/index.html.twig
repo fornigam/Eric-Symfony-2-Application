@@ -1,0 +1,23 @@
+{% extends "CelonSoftwareAdminBundle::layout.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link type="text/css" rel="stylesheet" rev="stylesheet" href="{{ asset("bundles/celonsoftwareadmin/css/signin.css")}}"/>
+{% endblock %}
+{% block body %}
+    <div class="text-center">
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {% include "CelonSoftwareAdminBundle::nav.html.twig" %}
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}" class="btn btn-primary btn-lg">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-primary btn-lg">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+            <a href="{{ path('fos_user_resetting_request') }}" class="btn btn-primary btn-lg">Forgot Password</a>
+        {% endif %}
+    </div>
+    {#{% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="flash-{{ type }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}#}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% form_theme form "CelonSoftwareAdminBundle::theme_field_layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form class="form-signin" action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+    <h2 class="form-signin-heading">Wish to update profile!</h2>
+    <div id="fos_user_registration_form" >
+        {{ form_widget(form) }}
+    </div>
+    <div>
+        <button type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block">{{ 'profile.edit.submit'|trans }}</button>        
+        <br/>
+        <a href='{{ path('celon_software_admin_user_homepage') }}' id="_submit" name="_submit" class="btn btn-primary btn-lg full-width">Home</a>
+    </div>
+</form>

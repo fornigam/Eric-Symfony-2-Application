@@ -1,0 +1,27 @@
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">                            
+                <li class="active">
+                    <a href="{{ path("celon_software_admin_user_homepage") }}">Home</a>
+                </li>
+                <li>
+                    <a href="{{ path("celon_software_admin_log_upload") }}">Upload</a>
+                </li>
+
+
+            </ul>
+            <ul class="nav navbar-nav float-right">
+                <li>
+                    <a href="{{ path('fos_user_profile_edit') }}">{{ 'layout.Welcome'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a>
+                </li>
+                <li>
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
