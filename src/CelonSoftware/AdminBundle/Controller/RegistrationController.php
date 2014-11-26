@@ -1,9 +1,13 @@
 <?php
 /*
- * Auther Name : Celon Software
- * Purpose : Overrride Registration controller to prevent unauthorize access
+ * To Override default funcationality of FOSUserBundle.
+ * Prevent unauthorize access of module registration patch up code in registeration.
  */
- 
+
+/**
+ * @author nigam
+ */
+
 namespace CelonSoftware\AdminBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;

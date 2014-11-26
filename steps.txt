@@ -1,0 +1,31 @@
+:: Steps to install ::
+-------------------------------------------------
+URL : http://<hostname>/web/app.php
+
+:: Command to install database ::
+-------------------------------------------------
+database name : symfony2
+php app/console doctrine database create symfony2
+
+:: Command to create tables ::
+-------------------------------------------------
+php app/console doctrine:schema:update --force
+
+:: This will create 2 tables ::
+-------------------------------------------------
+- fos_user
+- log
+
+:: Clear cache of before run an application ::
+-------------------------------------------------
+php app/console cache:clear --env=prod
+php app/console cache:clear --env=dev
+
+:: Functionality ::
+--------------------
+- Login : http://<hostname>/symfony2/web/app.php/login
+- Register : http://<hostname>/symfony2/web/app.php/register
+- Home page : http://<hostname>/symfony2/web/app_dev.php/
+- Upload log file : http://<hostname>/symfony2/web/app_dev.php/upload
+- List log : http://<hostname>/symfony2/web/app_dev.php/listlog
+- Edit Profile : http://<hostname>/symfony2/web/app_dev.php/profile/edit
